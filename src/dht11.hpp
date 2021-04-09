@@ -1,3 +1,4 @@
+//用于实现DHT11传感器的相关功能
 #pragma once
 #include "DHT.h"
 #define DHTPIN 16     // Digital pin connected to the DHT sensor
@@ -5,9 +6,16 @@
 #define DHTTYPE DHT11 // DHT 11
 
 DHT dht(DHTPIN, DHTTYPE);
-void dht11()
+void DHTinit()
 {
-  delay(2000);                      // 等一段时间给传感器检测，一般温度和湿度各需要250毫秒
-  float h = dht.readHumidity();    //读湿度        int
-  float t = dht.readTemperature(); //读温度
+  dht.begin();
+}
+float GetHumidity()
+{
+  return  dht.readHumidity();
+  
+}
+float GetTemperature()
+{
+  return dht.readTemperature();
 }
