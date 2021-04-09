@@ -1,3 +1,4 @@
+#pragma once
 #include "DHT.h"
 #define DHTPIN 16     // Digital pin connected to the DHT sensor
 
